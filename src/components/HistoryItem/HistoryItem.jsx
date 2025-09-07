@@ -1,9 +1,11 @@
 // src/components/HistoryItem/HistoryItem.jsx
 import { useState } from "react";
+import { FileAudio, ClipboardList, Trash2 } from 'lucide-react';
 
 const HistoryItem = ({ item, onDelete }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  
 
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleString('en-US', {
@@ -34,8 +36,8 @@ const HistoryItem = ({ item, onDelete }) => {
     <div className="bg-gray-800 border border-gray-700 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
       <div className="flex items-start justify-between mb-4">
         <div className="flex-1 min-w-0">
-          <h3 className="text-lg font-semibold text-white truncate">
-            📄 {item.filename || "Untitled Recording"}
+          <h3 className="flex items-center justify-left gap-2 text-lg font-semibold text-white truncate">
+            <FileAudio className="w-5 h-5"/> {item.filename || "Untitled Recording"}
           </h3>
           <p className="text-sm text-gray-400 mt-1">
             {formatDate(item.createdAt)}
@@ -48,14 +50,14 @@ const HistoryItem = ({ item, onDelete }) => {
             className="p-2 text-gray-400 hover:text-white hover:bg-gray-700 rounded-lg transition-colors"
             title="Copy transcription"
           >
-            📋
+            <ClipboardList/>
           </button>
           <button
             onClick={() => setShowDeleteConfirm(true)}
             className="p-2 text-gray-400 hover:text-red-400 hover:bg-gray-700 rounded-lg transition-colors"
             title="Delete item"
           >
-            🗑️
+            <Trash2/>
           </button>
         </div>
       </div>
@@ -93,7 +95,7 @@ const HistoryItem = ({ item, onDelete }) => {
             </p>
             <div className="flex justify-end space-x-3">
               <button
-                onClick={() => setShowDeleteConfirm(false)}
+                onClick={() => setShowDeleteConfirm(true)}
                 className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors"
               >
                 Cancel

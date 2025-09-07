@@ -3,7 +3,7 @@ import { useState } from "react";
 import FileUpload from "../../components/FileUpload/FileUpload";
 import AudioRecorder from "../../components/AudioRecorder/AudioRecorder";
 import TranscriptionResult from "../../components/TranscriptionResult/TranscriptionResult";
-
+import { Podcast } from 'lucide-react';
 const Home = () => {
   const [transcription, setTranscription] = useState("");
   const [loading, setLoading] = useState(false);
@@ -11,8 +11,8 @@ const Home = () => {
   return (
     <div className="flex flex-col items-center max-w-2xl mx-auto space-y-8">
       <div className="text-center mb-6">
-        <h1 className="text-4xl font-bold text-white mb-2">
-          🎤 Speech Transcriber
+        <h1 className="flex items-center justify-center  text-4xl font-bold text-white mb-2">
+          <Podcast className="w-8 h-8 m-2"  /> Speech Transcriber
         </h1>
         <p className="text-gray-300">
           Upload an audio file or record directly to get transcription

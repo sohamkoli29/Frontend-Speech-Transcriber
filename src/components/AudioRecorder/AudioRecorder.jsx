@@ -1,6 +1,8 @@
 // src/components/AudioRecorder/AudioRecorder.jsx
 import { useState, useRef } from "react";
 import axios from "axios";
+import { Mic,CirclePause } from 'lucide-react';
+
 
 const AudioRecorder = ({ setTranscription, loading, setLoading }) => {
   const [isRecording, setIsRecording] = useState(false);
@@ -75,30 +77,34 @@ const AudioRecorder = ({ setTranscription, loading, setLoading }) => {
   return (
     <div className="bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-700">
       <div className="flex items-center mb-4">
-        <h2 className="text-xl font-semibold text-white">🎙️ Record Audio</h2>
+        <h2 className="text-xl font-semibold text-white">Record Audio</h2>
       </div>
       
       <div className="text-center space-y-4">
         {!isRecording ? (
           <button
-            onClick={startRecording}
-            className="w-full bg-green-500 hover:bg-green-600 disabled:bg-gray-600 disabled:cursor-not-allowed px-4 py-3 rounded-lg font-medium transition-colors"
-            disabled={loading}
-          >
-            🎙️ Start Recording
+                onClick={startRecording}
+                className="w-full flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 disabled:bg-gray-600 disabled:cursor-not-allowed px-4 py-3 rounded-lg font-medium transition-colors"
+                disabled={loading}
+                                    >
+                  Start Recording
+                <Mic className="w-5 h-5" />
           </button>
+
         ) : (
           <div className="space-y-4">
             <div className="flex items-center justify-center space-x-2">
-              <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-              <span className="text-red-400 font-medium">Recording in progress...</span>
+              <div className="w-3 h-3 bg-cyan-500 rounded-full animate-pulse"></div>
+              <span className="text-cyan-400 font-medium">Recording in progress...</span>
             </div>
-            <button
-              onClick={stopRecording}
-              className="w-full bg-red-500 hover:bg-red-600 px-4 py-3 rounded-lg font-medium transition-colors"
-            >
-              ⏹️ Stop Recording
-            </button>
+           <button
+  onClick={stopRecording}
+  className="w-full flex items-center justify-center gap-2 bg-cyan-500 hover:bg-cyan-600 disabled:bg-gray-600 disabled:cursor-not-allowed px-4 py-3 rounded-lg font-medium transition-colors"
+  disabled={loading}
+>
+  Stop Recording
+  <CirclePause className="w-5 h-5" />
+      </button>
           </div>
         )}
         

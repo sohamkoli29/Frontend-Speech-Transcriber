@@ -1,7 +1,7 @@
 // src/components/FileUpload/FileUpload.jsx
 import { useState } from "react";
 import axios from "axios";
-
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 const FileUpload = ({ setTranscription, loading, setLoading }) => {
   const [file, setFile] = useState(null);
 
@@ -39,7 +39,7 @@ const FileUpload = ({ setTranscription, loading, setLoading }) => {
   return (
     <div className="bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-700">
       <div className="flex items-center mb-4">
-        <h2 className="text-xl font-semibold text-white">📁 Upload Audio File</h2>
+        <h2 className="text-xl font-semibold text-white">Upload Audio File</h2>
       </div>
       
       <div className="space-y-4">
@@ -63,7 +63,8 @@ const FileUpload = ({ setTranscription, loading, setLoading }) => {
           className="w-full bg-blue-500 hover:bg-blue-600 disabled:bg-gray-600 disabled:cursor-not-allowed px-4 py-3 rounded-lg font-medium transition-colors"
           disabled={loading || !file}
         >
-          {loading ? "⏳ Transcribing..." : "Upload & Transcribe"}
+         
+          {loading ? <LoadingSpinner/> : "Upload & Transcribe"}
         </button>
       </div>
     </div>

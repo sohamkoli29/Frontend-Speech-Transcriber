@@ -1,4 +1,5 @@
 // src/components/TranscriptionResult/TranscriptionResult.jsx
+import { Captions,ClipboardList } from 'lucide-react';
 const TranscriptionResult = ({ transcription, loading }) => {
   const copyToClipboard = () => {
     if (transcription) {
@@ -10,14 +11,15 @@ const TranscriptionResult = ({ transcription, loading }) => {
   return (
     <div className="w-full bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-700">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-semibold text-white">📝 Transcription Result</h2>
+        <h2 className="flex items-center justify-center gap-2 text-xl font-semibold text-white">
+          <Captions className='w-7 h-7'/> Transcription Result</h2>
         {transcription && !loading && (
           <button
             onClick={copyToClipboard}
-            className="px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm transition-colors"
+            className="flex items-center justify-center gap-1 px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm transition-colors"
             title="Copy to clipboard"
           >
-            📋 Copy
+            <ClipboardList/> Copy
           </button>
         )}
       </div>

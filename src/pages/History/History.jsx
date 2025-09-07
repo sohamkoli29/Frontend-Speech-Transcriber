@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import HistoryItem from "../../components/HistoryItem/HistoryItem";
 import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
+import { FolderClock } from 'lucide-react';
 
 const History = () => {
   const [history, setHistory] = useState([]);
@@ -48,8 +49,9 @@ const History = () => {
   return (
     <div className="max-w-4xl mx-auto">
       <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold text-white mb-2">
-          📜 Transcription History
+        
+        <h1 className="flex items-center justify-center gap-2 text-3xl font-bold text-white mb-2">
+          <FolderClock className="w-7 h-7"/>Transcription History
         </h1>
         <p className="text-gray-300">
           View and manage your previous transcriptions
