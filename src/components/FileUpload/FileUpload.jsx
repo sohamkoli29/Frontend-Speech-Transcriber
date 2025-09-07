@@ -23,7 +23,7 @@ const FileUpload = ({ setTranscription, loading, setLoading }) => {
     formData.append("audio", file);
 
     try {
-      const res = await axios.post("http://localhost:5000/upload", formData, {
+      const res = await axios.post("https://backend-speech-transcriber-1.onrender.com/upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
