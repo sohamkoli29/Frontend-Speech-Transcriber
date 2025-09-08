@@ -1,4 +1,4 @@
-# 🎙️ Speech Transcriber (Frontend)
+#  Speech Transcriber (Frontend)
 
 A React + Vite-based frontend application for real-time speech transcription.  
 Built with **React 19**, **Vite**, **Tailwind CSS**, and **Axios**.
