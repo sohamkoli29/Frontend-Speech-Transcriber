@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }) => {
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
       // Verify token with backend
-      const response = await axios.get('https://backend-speech-transcriber-2.onrender.com/auth/verify');
+      const response = await axios.get('https://backend-speech-transcriber-3.onrender.com/auth/verify');
       setUser(response.data.user);
     } catch (error) {
       console.error('Auth verification failed:', error);
@@ -50,7 +50,7 @@ export const AuthProvider = ({ children }) => {
       setError(null);
       setLoading(true);
 
-      const response = await axios.post('https://backend-speech-transcriber-2.onrender.com/auth/login', {
+      const response = await axios.post('https://backend-speech-transcriber-3.onrender.com/auth/login', {
         email,
         password
       });
@@ -77,7 +77,7 @@ export const AuthProvider = ({ children }) => {
       setError(null);
       setLoading(true);
 
-      const response = await axios.post('https://backend-speech-transcriber-2.onrender.com/auth/signup', {
+      const response = await axios.post('https://backend-speech-transcriber-3.onrender.com/auth/signup', {
         name,
         email,
         password
