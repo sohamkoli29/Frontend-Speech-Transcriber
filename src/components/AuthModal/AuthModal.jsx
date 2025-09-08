@@ -130,7 +130,7 @@ const AuthModal = ({ isOpen, onClose, initialMode = 'login' }) => {
         {/* Header */}
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-white mb-2">
-            {mode === 'login' ? '🔐 Sign In' : '🎉 Create Account'}
+            {mode === 'login' ? ' Sign In' : ' Create Account'}
           </h2>
           <p className="text-gray-400">
             {mode === 'login' 
