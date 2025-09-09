@@ -1,3 +1,9 @@
+# Speech Transcriber
+
+## Repositories
+- [Frontend](https://github.com/sohamkoli29/Frontend-Speech-Transcriber)
+- [Backend](https://github.com/sohamkoli29/Backend-Speech-Transcriber)
+
 #  Speech Transcriber (Frontend)
 
 A React + Vite-based frontend application for real-time speech transcription.  
