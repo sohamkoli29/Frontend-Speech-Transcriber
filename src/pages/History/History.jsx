@@ -14,7 +14,7 @@ const History = () => {
     const fetchHistory = async () => {
       try {
         setLoading(true);
-        const res = await axios.get("https://backend-speech-transcriber-3.onrender.com/history");
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/history`);
         setHistory(res.data.data || []);
         setError(null);
       } catch (err) {
@@ -30,7 +30,7 @@ const History = () => {
 
   const deleteHistoryItem = async (id) => {
     try {
-      await axios.delete(`https://backend-speech-transcriber-3.onrender.com/history/${id}`);
+      await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/history/${id}`);
       setHistory(history.filter(item => item._id !== id));
     } catch (err) {
       console.error("Error deleting item:", err);
